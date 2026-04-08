@@ -15,5 +15,5 @@ I regularly solve LeetCode problems but often forget which questions I’ve alre
 - Deployed: Render (backend) + Netlify (frontend)
 
 ## Live Deployment
-**Frontend:** [Add your Netlify/GitHub Pages URL here]  
+**Frontend:** https://dainty-pie-d200aa.netlify.app/
 **Backend:** [Add your Render URL here]

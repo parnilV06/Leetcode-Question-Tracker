@@ -1,4 +1,4 @@
-const BACKEND_URL = "http://localhost:3000";
+const BACKEND_URL = "https://leetcode-question-tracker.onrender.com";
 
 const form = document.getElementById("questionForm");
 const questionNumberInput = document.getElementById("questionNumber");
