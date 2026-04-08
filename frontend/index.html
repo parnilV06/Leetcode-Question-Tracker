@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LeetCode Question Tracker</title>
+    <style>
+      :root {
+        --bg: #f5f7fb;
+        --card: #ffffff;
+        --text: #1f2937;
+        --muted: #6b7280;
+        --primary: #2563eb;
+        --danger: #dc2626;
+        --border: #d1d5db;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 32px auto;
+        padding: 0 16px;
+      }
+
+      h1 {
+        margin-top: 0;
+        margin-bottom: 16px;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 16px;
+        margin-bottom: 16px;
+      }
+
+      form {
+        display: grid;
+        gap: 10px;
+      }
+
+      input,
+      textarea,
+      select,
+      button {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        font-size: 14px;
+      }
+
+      textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      button {
+        background: var(--primary);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+
+      button:hover {
+        opacity: 0.95;
+      }
+
+      .inline-actions {
+        display: flex;
+        gap: 8px;
+        margin-top: 8px;
+      }
+
+      .secondary {
+        background: #4b5563;
+      }
+
+      .danger {
+        background: var(--danger);
+      }
+
+      .item {
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 12px;
+        margin-bottom: 10px;
+      }
+
+      .meta {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      #loading,
+      #error {
+        margin-bottom: 12px;
+      }
+
+      #error {
+        color: var(--danger);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <h1>LeetCode Question Tracker</h1>
+
+      <section class="card">
+        <form id="questionForm">
+          <input id="questionNumber" type="number" placeholder="Question Number" required />
+          <input id="title" type="text" placeholder="Title" required />
+          <textarea id="code" placeholder="Code" required></textarea>
+          <select id="status" required>
+            <option value="solved">solved</option>
+            <option value="attempting">attempting</option>
+            <option value="unsolved">unsolved</option>
+          </select>
+          <input id="tag" type="text" placeholder="Tag" required />
+          <button id="submitBtn" type="submit">Create</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <div id="loading"></div>
+        <div id="error"></div>
+        <div id="questionList"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
