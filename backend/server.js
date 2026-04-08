@@ -8,7 +8,24 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+const allowedOrigins = [
+	"http://localhost:3001",
+	"http://127.0.0.1:3001",
+	"https://dainty-pie-d200aa.netlify.app",
+];
+
+const corsOptions = {
+	origin(origin, callback) {
+		if (!origin || allowedOrigins.includes(origin)) {
+			return callback(null, true);
+		}
+
+		return callback(new Error("CORS policy does not allow this origin"));
+	},
+};
+
+app.use(cors(corsOptions));
+app.options(/.*/, cors(corsOptions));
 app.use(express.json());
 
 app.get("/health", (req, res) => {
